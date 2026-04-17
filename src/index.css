@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  /* Bento Grid Palette */
+  --color-bento-bg: #f8fafc;
+  --color-bento-border: #e2e8f0;
+  --color-bento-primary: #1e293b;
+  --color-bento-accent: #2563eb;
+  --color-bento-accent-soft: #dbeafe;
+  --color-bento-text: #0f172a;
+  --color-bento-muted: #64748b;
+  --color-bento-success: #16a34a;
+  
+  --radius-bento: 20px;
+}
+
+@layer base {
+  body {
+    @apply bg-bento-bg text-bento-text font-sans;
+  }
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
